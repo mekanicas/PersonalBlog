@@ -87,6 +87,7 @@ header nav {
 .seachbar i {
   font-size: 20px;
   color: #94a9c9;
+  cursor: pointer;
 }
 
 .searchclick {
@@ -100,6 +101,7 @@ header nav {
   padding: 10px;
   overflow: hidden;
   z-index: 1;
+  display: none;
 }
 .searchclick form {
   position: relative;
@@ -220,4 +222,66 @@ header nav {
   background-color: rgb(215 202 202 / 45%);
   box-shadow: 0.125em 0.125em rgba(0, 0, 0, 0.1) inset;
   border: 1px solid #999;
+}
+
+.l:checked::before{
+  background-color: currentColor;
+  transform: translateX(125%);
+}
+.l:checked::after{
+  border-left-color : currentColor;
+  transform: translateX(-2.5%) rotateY(180deg);
+}
+
+.l:focus{
+  outline: 0;
+}
+
+.searchdarksub button{
+  pad: 12px 18px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 600;
+  perspective: 30rem;
+  border-radius: 6px;
+}
+.searchdarksub button::before{
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 6px;
+  background: linear-gradient(320deg, #0ea5ea, #0bd1d1 51%, #0ea5ea) var(--x, 0)/200%;
+  z-index: 1;
+  transition: background 3s;
+}
+.searchdarksub buttom:hover::before{
+  animation: rotate 1s;
+  transition: all 0.5s;
+}
+
+@keyframes rotate{
+  0%{
+    transform: rotateY(100deg);
+  }
+  100%{
+    transform: rotateY(360deg);
+  }
+}
+
+.searchdarksub buttom a{
+  color: white;
+}
+
+/* main start */
+
+.biosec{
+  position: relative;
 }
