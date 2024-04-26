@@ -8,7 +8,19 @@
 body {
   font-family: "Noto Sans", sans-serif;
   scroll-behavior: smooth;
-  transition: 0, 3 all;
+  transition: 0.3 all;
+}
+body::before, body::after{
+  width: 500px;
+  content: '';
+  z-index: 1;
+  position: absolute;
+}
+body::after{
+  background: url('../media/svg/blueshadow1.svg') no-repeat 100% 0;
+  height: 800px;
+  left: 0;
+  top: 0;
 }
 
 .container1 {
@@ -284,4 +296,102 @@ header nav {
 
 .biosec{
   position: relative;
+  justify-content: space-between;
+  margin-top: 100px;
+  width: 100%;
+  height: auto;
+}
+.bio{
+  margin-top: 40px;
+
+}
+.bio h4{
+  font-size: 15px;
+  font-weight: 700;
+  color: #7f92b0;
+}
+.bio h1{
+  font-size: 64px;
+  color: #344161;
+  margin: 20px 0;
+}
+.multi-text{
+  background: linear-gradient(320deg, #0ea5ea, #0bd1d1 51%, #0ea5ea) var(--x, 0)/200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.blink{
+  border: 4px solid #344161;
+  margin-left: 15px;
+  animation: blink 1s infinite;
+}
+@keyframes blink{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+.bio p{
+  width: 65%;
+  color: #7f92b0;
+  font-size: 14px;
+  line-height: 24px;
+  margin: 15px 0;
+}
+.emailsub{
+  width: 50%;
+  background: linear-gradient(#e9eef5, #e9eef5) padding-box, linear-gradient(90deg, #e9eef5, #e9eef5) border-box;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 10px 10px 10px 20px;
+  margin: 40px 0;
+}
+.emailsub form{
+  width: 100%;
+}
+.emailsub form input{
+  font-family: 'Noto Sans', sans-serif;
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  background: transparent;
+}
+.emailsub form button{
+  padding: 10px 16px;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  background : transparent;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 600;
+  perspective: 30rem;
+  border-radius: 6px;
+}
+
+.emailsub form button::before{
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 6px;
+  background: linear-gradient(320deg, #0ea5ea, #0bd1d1 51%, #0ea5ea) var(--x, 0)/200%;
+  z-index: -1;
+}
+.bioimg{
+  position: relative;
+  width: 800px;
+}
+.bioimg img{
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  transition: all 0.3s ease 0s;
 }
